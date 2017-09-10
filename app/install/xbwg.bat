@@ -1,0 +1,1 @@
+mysqldump -uroot -P3309 -pwesten1123.com -x --hex-blob --all-databases >> %~dp0xbwg.sql
