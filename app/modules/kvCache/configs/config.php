@@ -5,12 +5,12 @@ $config = new Phalcon\Config(array(
 	'realServersList' => array(
 		array(
 			'host' => '127.0.0.1', 
-			'port' => '6379', 
+			'port' => '11211',
 			'weight' => 10
 		), 
 		array(
 			'host' => 'localhost', 
-			'port' => '6379', 
+			'port' => '11211',
 			'weight' => 15
 		)
 	)

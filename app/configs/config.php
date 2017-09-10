@@ -13,7 +13,7 @@ $config = new Phalcon\Config(array(
 		'host' => 'localhost',
 		'port' => '3309',
 		'username' => 'root',
-		'password' => 'westen1123.com',
+		'password' => '?wg1985?',
 		'dbname' => 'mysql'
 	),
 	'_remoteServices' => array(

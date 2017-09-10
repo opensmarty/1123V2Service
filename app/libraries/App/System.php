@@ -5,7 +5,7 @@ namespace App {
 	use Phalcon\Loader;
 	use App\FileSystem as FS;
 	use App\Events\Manager;
-	use App\Cache\APC;
+	use App\Cache\APCU;
 	use App\Exception;
 	use App\DI;
 	use App\Http\Request;
@@ -195,7 +195,7 @@ namespace App {
 				$modifiedTimeINI = filemtime($configFileINI);
 			}
 			$modifiedTime = max($modifiedTimePHP, $modifiedTimeINI);
-			$config = APC::get('_globalConfig', $modifiedTime, function () use($configFilePHP, $configFileINI, $modifiedTimePHP, $modifiedTimeINI, $modifiedTime) {
+			$config = APCU::get('_globalConfig', $modifiedTime, function () use($configFilePHP, $configFileINI, $modifiedTimePHP, $modifiedTimeINI, $modifiedTime) {
 				// 刷新配置信息。
 				$config = null;
 				if ($modifiedTimePHP > 0) {
@@ -269,7 +269,7 @@ namespace App {
 			else {
 				$refreshInterval = self::DEFAULT_DYNAMIC_CONFIG_REFRESH_INTERVAL;
 			}
-			$dynamicConfig = APC::get($dynamicConfigKey, -$refreshInterval, function () use($dynamicConfigKey) {
+			$dynamicConfig = APCU::get($dynamicConfigKey, -$refreshInterval, function () use($dynamicConfigKey) {
 				// 刷新动态配置信息。
 				$config = null;
 				$kvcache = self::$instance->getDI()->getShared('kvcache');
@@ -545,7 +545,7 @@ namespace App {
 				$moduleInstance->setConfig(self::$config->$moduleName);
 				
 				// 触发用户模块的首次运行事件，它仅会被触发一次，所以在此事件处理程序中模块可以作一些特殊的初始化工作。
-				APC::get('_' . $moduleName . 'Run', 1, function () use($moduleInstance) {
+				APCU::get('_' . $moduleName . 'Run', 1, function () use($moduleInstance) {
 					if (method_exists($moduleInstance, 'onFirstRun')) {
 						$moduleInstance->onFirstRun();
 					}
@@ -915,7 +915,7 @@ namespace App {
 		}
 		
 		/**
-		 * 对临界代码区进行加锁(基于APC扩展与flock函数实现，但它是一个进程级的锁机制，也因此它只能工作在单进程的多线程环境下，但是它的效率比较高)。
+		 * 对临界代码区进行加锁(基于APCU扩展与flock函数实现，但它是一个进程级的锁机制，也因此它只能工作在单进程的多线程环境下，但是它的效率比较高)。
 		 * @param string $name 锁名称。
 		 * @return void
 		 */
@@ -931,17 +931,17 @@ namespace App {
 			}
 			
 			// 初始化锁对应的缓存键。
-			if (!apc_exists($name)) {
+			if (!apcu_exists($name)) {
 				self::flock($oldName);
-				if (!apc_exists($name)) {
+				if (!apcu_exists($name)) {
 					// 只有第一个取得锁的线程才能初始化锁对应的缓存键。
-					apc_store($name, 0);
+					apcu_store($name, 0);
 				}
 				self::unflock(true);
 			}
 			
 			// 获得指定的锁。
-			while (!apc_cas($name, 0, 1)) {
+			while (!apcu_cas($name, 0, 1)) {
 				usleep(mt_rand(10, 1000));
 			}
 			self::$locks[$name] = $name;
@@ -952,7 +952,7 @@ namespace App {
 				$setup = true;
 				register_shutdown_function(function () {
 					foreach (self::$locks as $name) {
-						apc_store($name, 0);
+						apcu_store($name, 0);
 					}
 				});
 			}
@@ -964,7 +964,7 @@ namespace App {
 		 */
 		public static function unlock() {
 			if (!empty(self::$locks)) {
-				apc_store(array_pop(self::$locks), 0);
+				apcu_store(array_pop(self::$locks), 0);
 			}
 		}
 		

@@ -1,7 +1,7 @@
 <?php
 namespace App {
 	use App\System as Sys;
-	use App\Cache\APC;
+	use App\Cache\APCU;
 
 	/**
 	 * 文件系统类。
@@ -62,7 +62,7 @@ namespace App {
 		public static function hasPHPFile($dir) {
 			$ret = false;
 			if (is_dir($dir)) {
-				$ret = APC::get($dir, filemtime($dir), function () use($dir) {
+				$ret = APCU::get($dir, filemtime($dir), function () use($dir) {
 					$has = false;
 					$paths = scandir($dir);
 					foreach ($paths as $path) {
@@ -75,7 +75,7 @@ namespace App {
 				});
 			}
 			else {
-				APC::delete($dir);
+				APCU::delete($dir);
 			}
 			return $ret;
 		}

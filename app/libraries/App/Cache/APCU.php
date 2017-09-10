@@ -4,24 +4,24 @@ namespace App\Cache {
 	use App\Cache\AdapterInterface;
 
 	/**
-	 * 基于APC的缓存类。
+	 * 基于APCU的缓存类。
 	 */
-	class APC implements AdapterInterface {
+	class APCU implements AdapterInterface {
 		/**
 		 * 默认生命期秒数。
 		 */
 		const DEFAULT_TTL = 604800;
-		
+
 		/**
 		 * 缓存键不存在。
 		 */
 		const KEY_NOT_EXISTS = 0;
-		
+
 		/**
 		 * 缓存数据已到期。
 		 */
 		const KEY_DATA_EXPIRES = 1;
-		
+
 		/**
 		 * 获取指定键的缓存数据，当指定键的缓存不存在或已失效时，它就会执行获取新数据的回调函数，以存储或刷新指定键的缓存数据，默认生命期为一周。
 		 * @param string $key 缓存键。
@@ -35,11 +35,11 @@ namespace App\Cache {
 		public static function get($key, $mtime, $callback, $params = null, $ttl = null) {
 			// 获取指定键的缓存数据。
 			$key = $_SERVER['DOCUMENT_ROOT'] . $key;
-			if (!apc_exists($key)) {
+			if (!apcu_exists($key)) {
 				$flag = self::KEY_NOT_EXISTS;
 			}
 			else {
-				$data = apc_fetch($key);
+				$data = apcu_fetch($key);
 				if ($mtime < 0) {
 					if ((time() - $data['mtime']) >= -$mtime) {
 						$mtime = time();
@@ -53,7 +53,7 @@ namespace App\Cache {
 				}
 				$flag = self::KEY_DATA_EXPIRES;
 			}
-			
+
 			// 刷新指定键的缓存数据。
 			if (!is_callable($callback)) {
 				Sys::throwException('获取新数据的回调函数参数无效');
@@ -62,21 +62,21 @@ namespace App\Cache {
 			if (is_null($ttl) || $ttl < 0) {
 				$ttl = self::DEFAULT_TTL;
 			}
-			apc_store($key, array(
-				'mtime' => $mtime, 
+			apcu_store($key, array(
+				'mtime' => $mtime,
 				'value' => $value
 			), $ttl);
-			
+
 			return $value;
 		}
-		
+
 		/**
 		 * 删除指定键的缓存数据。
 		 * @param $string $key
 		 * @return void
 		 */
 		public static function delete($key) {
-			apc_delete($key);
+			apcu_delete($key);
 		}
 	}
 }

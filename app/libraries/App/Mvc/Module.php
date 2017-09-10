@@ -3,7 +3,7 @@ namespace App\Mvc {
 	use App\System as Sys;
 	use App\FileSystem as FS;
 	use App\Aspect;
-	use App\Cache\APC;
+	use App\Cache\APCU;
 	use Phalcon\Mvc\ModuleDefinitionInterface;
 	use Phalcon\Annotations\Reader;
 	use Phalcon\Config\Adapter\Ini;
@@ -174,7 +174,7 @@ namespace App\Mvc {
 			$configKey = '_' . $moduleName . 'ModuleConfig';
 			$config = null;
 			if ($modifiedTime > 0) {
-				$config = APC::get($configKey, $modifiedTime, function () use($configFilePHP, $configFileINI, $modifiedTimePHP, $modifiedTimeINI, $modifiedTime) {
+				$config = APCU::get($configKey, $modifiedTime, function () use($configFilePHP, $configFileINI, $modifiedTimePHP, $modifiedTimeINI, $modifiedTime) {
 					// 刷新配置信息。
 					$config = null;
 					if ($modifiedTimePHP > 0) {
@@ -194,7 +194,7 @@ namespace App\Mvc {
 					return $config;
 				});
 				if (empty($config)) {
-					APC::delete($configKey);
+					APCU::delete($configKey);
 				}
 			}
 			Sys::getConfig()->$moduleName = $config;
@@ -219,7 +219,7 @@ namespace App\Mvc {
 		 * @param \Phalcon\DiInterface $di
 		 * @return void
 		 */
-		public function registerAutoloaders($di) {
+		public function registerAutoloaders(\Phalcon\DiInterface $di = NULL) {
 			self::registerAutoloadersFor(true);
 		}
 		
@@ -228,7 +228,7 @@ namespace App\Mvc {
 		 * @param \Phalcon\DiInterface $di
 		 * @return void
 		 */
-		public function registerServices($di) {
+		public function registerServices(\Phalcon\DiInterface $di = NULL) {
 			self::registerServicesFor(true);
 			if (method_exists($this, 'onHttpRequest')) {
 				$this->onHttpRequest();
@@ -399,7 +399,7 @@ namespace App\Mvc {
 				$callback = function () use($_this, &$aspectFile) {
 					return $_this->parseAspectFile($aspectFile);
 				};
-				$files = APC::get($aspectKey, filemtime($aspectDir), function () use($aspectDir) {
+				$files = APCU::get($aspectKey, filemtime($aspectDir), function () use($aspectDir) {
 					$ret = array();
 					$files = scandir($aspectDir);
 					foreach ($files as $file) {
@@ -411,14 +411,14 @@ namespace App\Mvc {
 					return $ret;
 				});
 				foreach ($files as $aspectFile) {
-					$this->aspectList[$aspectFile] = APC::get('_' . $aspectFile, filemtime($aspectFile), $callback);
+					$this->aspectList[$aspectFile] = APCU::get('_' . $aspectFile, filemtime($aspectFile), $callback);
 				}
 				
 				// 织入方面代码到系统中去。
 				$this->weavinAspects();
 			}
 			else {
-				APC::delete($aspectKey);
+				APCU::delete($aspectKey);
 			}
 			
 			// 调用用户模块初始化方法。

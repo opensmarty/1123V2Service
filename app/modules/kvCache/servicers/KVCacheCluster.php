@@ -4,7 +4,7 @@ namespace App\KvCache\Servicers {
 	use App\Mvc\Servicer;
 	use App\KvCache\Memcache;
 	use App\KvCache\Redis;
-	use App\Cache\APC;
+	use App\Cache\APCU;
 	use Phalcon\Cache\Frontend\Igbinary;
 	use Phalcon\Cache\BackendInterface;
 	use Phalcon\Kernel;
@@ -273,7 +273,7 @@ namespace App\KvCache\Servicers {
 				else {
 					// 如果缓存到期了就说明配置文件已被修改过，此时就需要重建虚拟服务器到真实服务器的映射。
 					$data = igbinary_unserialize($seriData);
-					if ($flag == APC::KEY_DATA_EXPIRES) {
+					if ($flag == APCU::KEY_DATA_EXPIRES) {
 						$this->oldData = $data;
 						$data = $this->recreateServersMap();
 						$writeDBFile = true;
@@ -307,7 +307,7 @@ namespace App\KvCache\Servicers {
 		public function initialize() {
 			// 从缓存数据恢复参数。
 			$_this = $this;
-			$data = APC::get('_KVCacheCluster', $this->config->_modifiedTime, function ($flag) use($_this) {
+			$data = APCU::get('_KVCacheCluster', $this->config->_modifiedTime, function ($flag) use($_this) {
 				return $_this->callback($flag);
 			});
 			$this->virtualServersCount = $data['virtualServersCount'];
@@ -331,7 +331,7 @@ namespace App\KvCache\Servicers {
 			$this->lastKey = $keyName;
 			
 			// 根据键名称计算出真实的服务器编号。
-			$virtualNumber = fmod(Kernel::preComputeHashKey32($keyName), $this->virtualServersCount);
+			$virtualNumber = fmod(Kernel::preComputeHashKey($keyName), $this->virtualServersCount);
 			$realNumber = $this->virtualToRealServersMap[$virtualNumber];
 			
 			// 获取缓存后端实例，如果最佳服务器连接不上将会选择后继邻近的服务器。

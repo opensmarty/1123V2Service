@@ -265,7 +265,7 @@ namespace App\Session\Servicers {
 		 * @param $options 选项信息。
 		 * @return void
 		 */
-		public function setOptions($options) {
+		public function setOptions(array $options) {
 		}
 		
 		/**
@@ -274,5 +274,16 @@ namespace App\Session\Servicers {
 		 */
 		public function getOptions() {
 		}
+
+		public function regenerateId($deleteOldSession = NULL) {
+
+        }
+        public function setName($name) {
+
+        }
+
+        public function getName() {
+
+        }
 	}
 }
