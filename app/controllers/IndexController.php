@@ -42,5 +42,9 @@ namespace App\Controllers {
 			echo str_replace("\n", '<br/>', shell_exec('git pull'));
 			exit('<br/>拉取完成！');
 		}
+
+		public function testAction(){
+		    echo 'phalcon-debug';
+        }
 	}
 }

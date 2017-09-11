@@ -3,6 +3,12 @@
   "description": "this is a phalcon framework.",
   "keywords": ["framework", "phalcon"],
   "license": "MIT",
+  "authors": [
+    {
+      "name": "opensmarty",
+      "email": "opensmarty@163.com"
+    }
+  ],
   "type": "project",
   "require": {
     "phalcon/devtools": "^3.2",
@@ -10,12 +16,21 @@
     "predis/predis": "^1.1",
     "guzzle/guzzle": "^3.9"
   },
-  "authors": [
-    {
-      "name": "opensmarty",
-      "email": "opensmarty@163.com"
+  "require-dev": {
+    "snowair/phalcon-debugbar": "^1.2"
+  },
+  "autoload": {
+    "classmap": [
+    ],
+    "psr-4": {
+      "App\\": "app/"
     }
-  ],
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
   "repositories": {
     "packagist": {
       "type": "composer",
