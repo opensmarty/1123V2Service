@@ -32,3 +32,9 @@ $provider = new \Snowair\Debugbar\ServiceProvider(APP_ROOT . '/configs/debugbar.
 $provider -> register();//注册
 $provider -> boot(); //启动
 ```
+
+#解决bug
+###解决sql导入问题
+``` bash
+sed -ie 's/row_format=fixed//g' xbwg.sql
+```

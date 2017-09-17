@@ -631,9 +631,6 @@ namespace App {
 			$app = self::getInstance();
 			self::$dispatcher = $app->di->getShared('dispatcher'); // 此步必须放在这，因为下一步就会设置控制器信息，这样后续代码在获取控制器信息时就能够获取到。
 			self::$isLaunched = true;
-            #根据debugbar.php存放的路径，适当的调整引入的相对路径
-            $app->di['app'] = $app;
-            (new \Snowair\Debugbar\ServiceProvider())->start();
 			$response = $app->handle();
 			exit($response->getContent());
 		}
