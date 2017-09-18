@@ -25,6 +25,7 @@ lib-cov
 *.dat
 *.out
 *.gz
+*.sql
 
 # Runtime data
 pids
@@ -42,7 +43,5 @@ npm-debug.log
 
 # Dependency directory
 node_modules
-dist
-vendor
-app/runtime
-app/install
+dist/
+vendor/
