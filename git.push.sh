@@ -3,7 +3,7 @@
 
 if [ -z $1 ]
 then
-    m="ok, this is empty info for committing."
+    m="ok, this is empty for the committing remark."
 else
     m=$1
 fi
