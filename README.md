@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 1123V2Service
 
 ``` bash
@@ -38,3 +39,6 @@ $provider -> boot(); //启动
 ``` bash
 sed -ie 's/row_format=fixed//g' xbwg.sql
 ```
+=======
+# 1123V2Service
+>>>>>>> 1ab78fab1b4cd14e8301a2a7d727d582db4631e2
