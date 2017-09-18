@@ -3,7 +3,7 @@
 
 if [ -z $1 ]
 then
-    m="ok"
+    m=ok, this is empty info for committing.
 else
     m=$1
 fi
