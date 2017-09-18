@@ -26,6 +26,10 @@ push(){
     for val in ${branch[@]}
     do
         domain=`expr ${val%:*} | cut -d"@" -f2`
+        if [[ $domain == "development" ]]
+        then
+            domain="origin"
+        fi
         if [[ $(git remote -v) =~ $val ]]
         then
             echo "分支[$index]:$domain"

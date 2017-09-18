@@ -2,102 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4f894b0-0d15-49f7-b4dc-c1e9b3508646" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/runtime/KVCacheCluster.db" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/LICENSE" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/cmd.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/components/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/configs/config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/configs/routes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/configs/services.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/ControllerBase.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/IndexController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/install/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Cache/APCU.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Cache/AdapterInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Cache/Session.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/DI.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Db/Adapter/Pdo/Mysql.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Events/Manager.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Exception.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/FileSystem.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Http/Request.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Loader.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/AdvancedModel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/Aspect.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/Component.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/Controller.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/Dispatcher.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/Model.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/Model/Manager.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/Model/Query.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/Module.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/RemoteServicerProxy.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/Servicer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/View.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/View/Engine/Volt.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Mvc/View/Engine/Volt/Compiler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/PHPX.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Security.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Session/AdapterInterface.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/System.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/UI/Message.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/UI/PageLink.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Utils/CSSReducer.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Utils/PHtmlCompressor.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/libraries/App/Version.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/migrations/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/Module.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/aspects/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/configs/config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/configs/routes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/configs/services.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/controllers/ControllerBase.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/controllers/IndexController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/libraries/App/KvCache/Memcache.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/libraries/App/KvCache/Redis.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/models/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/servicers/KVCacheCluster.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/kvCache/views/default/index/index.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/Module.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/aspects/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/configs/config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/configs/routes.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/configs/services.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/controllers/ControllerBase.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/controllers/IndexController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/libraries/App/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/models/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/runtime/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/servicers/KVDBSession.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/modules/session/views/default/index/index.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/runtime/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/servicers/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/default/index/exception.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/default/index/index.phtml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/default/layouts/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/git.push.sh" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/.htaccess" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/common.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/files/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/img/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/index.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/temp/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/webtools.config.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/webtools.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/syncwww.sh" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/git.push.sh" afterPath="$PROJECT_DIR$/git.push.sh" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -107,8 +13,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="git.push.sh" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/git.push.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/git.push.sh" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -138,7 +65,48 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1123V2Service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1123V2Service" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1123V2Service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1123V2Service" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1123V2Service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="1123V2Service" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
@@ -168,18 +136,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1505749483672</updated>
-      <workItem from="1505749486686" duration="2000" />
+      <workItem from="1505749486686" duration="1268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2000" />
+    <option name="totallyTimeSpent" value="1268000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1922" height="1029" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="PlantUML" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -207,5 +176,15 @@
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/git.push.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="30" column="20" lean-forward="true" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
