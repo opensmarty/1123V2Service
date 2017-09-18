@@ -3,7 +3,7 @@
 
 if [ -z $1 ]
 then
-    m="ok"
+    m="ok, this is empty info for committing."
 else
     m=$1
 fi
@@ -36,7 +36,7 @@ push(){
             git pull $domain master
             git add .
             git status
-            git commit -m $m
+            git commit -m  "$m"
             git push $domain master
         else
             git remote add $domain $val
